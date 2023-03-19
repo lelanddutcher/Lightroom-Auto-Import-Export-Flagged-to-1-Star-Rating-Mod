@@ -80,7 +80,7 @@ local function importFolder(LrCatalog, folder, outputFolder)
 		local export = {}
 
 		for _, photo in pairs(photos) do
-			if (photo:getRawMetadata("rating") ~= 3 and photo:getRawMetadata("pickStatus") == 1) then
+			if (photo:getRawMetadata("rating") ~= 3 and photo:getRawMetadata("rating") == 1) then
 				LrCatalog:withWriteAccessDo("Apply Preset", function(context)
 					for _, preset in pairs(presets) do
 						photo:applyDevelopPreset(preset)
